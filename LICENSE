@@ -1,0 +1,42 @@
+
+### Содержимое скриптов (пример для Chrome)
+**Chrome_PlayPause.ahk**
+```autohotkey
+#NoEnv
+SendMode Input
+SetTitleMatchMode, 2
+#Persistent
+
+; Проверяем, запущен ли браузер
+IfWinExist, ahk_exe chrome.exe
+{
+    ; 1. Попытка фоновой отправки
+    ControlSend, ahk_parent, {Space}, ahk_exe chrome.exe
+    Sleep, 300
+    
+    ; 2. Проверка состояния окна
+    WinGet, winState, MinMax, ahk_exe chrome.exe
+    if (winState = -1)  ; Если окно свёрнуто
+    {
+        WinActivate, ahk_exe chrome.exe
+        WinWaitActive, ahk_exe chrome.exe,, 1
+        Send, {Space}
+        WinMinimize, ahk_exe chrome.exe
+    }
+    
+    ; Уведомление
+    TrayTip, Chrome Control, Play/Pause отправлен в свёрнутый браузер, 1
+}
+else
+{
+    MsgBox, Chrome не запущен! Запустите браузер и повторите попытку.
+}
+
+ExitApp
+
+Для других браузеров измените:
+ahk_exe chrome.exe → ahk_exe msedge.exe (Edge)
+
+ahk_exe chrome.exe → ahk_exe firefox.exe (Firefox)
+
+ahk_exe chrome.exe → ahk_exe opera.exe (Opera)
