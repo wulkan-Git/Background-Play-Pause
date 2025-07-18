@@ -1,8 +1,8 @@
 # Background Media Control for Browsers
-
+[![Build Status](https://github.com/wulkan-Git/Background-Play-Pause/actions/workflows/build.yml/badge.svg)](https://github.com/wulkan-Git/Background-Play-Pause/actions)
 [![AutoHotkey](https://img.shields.io/badge/AutoHotkey-v1.1+-green.svg)](https://www.autohotkey.com/)
 ![Platform](https://img.shields.io/badge/Platform-Windows-blue)
-[![Build Status](https://github.com/wulkan-Git/Background-Play-Pause/actions/workflows/build.yml/badge.svg)](https://github.com/wulkan-Git/Background-Play-Pause/actions)
+
 Автоматически отправляет команду Play/Pause в фоновом режиме для популярных браузеров, даже когда они свёрнуты.
 
 ## Поддерживаемые браузеры
