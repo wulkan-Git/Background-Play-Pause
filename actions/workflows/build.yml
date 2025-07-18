@@ -1,0 +1,25 @@
+name: Compile Scripts
+
+on: [push, pull_request]
+
+jobs:
+  compile:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Install AutoHotkey
+        run: choco install autohotkey -y
+        
+      - name: Compile scripts
+        run: |
+          Ahk2Exe.exe /in "Browsers/Chrome_PlayPause.ahk" /out "Chrome_PlayPause.exe"
+          Ahk2Exe.exe /in "Browsers/Firefox_PlayPause.ahk" /out "Firefox_PlayPause.exe"
+          # Добавьте другие браузеры
+          
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Compiled-EXE
+          path: "*.exe"
