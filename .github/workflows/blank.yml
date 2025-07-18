@@ -1,8 +1,8 @@
 name: Compile Scripts
 
-on: 
+on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:  # Разрешает ручной запуск
 
 jobs:
@@ -19,7 +19,8 @@ jobs:
       run: |
         "C:\ProgramData\chocolatey\bin\Ahk2Exe.exe" /in "Browsers/Chrome_PlayPause.ahk" /out "Chrome_PlayPause.exe"
         "C:\ProgramData\chocolatey\bin\Ahk2Exe.exe" /in "Browsers/Firefox_PlayPause.ahk" /out "Firefox_PlayPause.exe"
-        # Добавьте другие браузеры
+        "C:\ProgramData\chocolatey\bin\Ahk2Exe.exe" /in "Browsers/Edge_PlayPause.ahk" /out "Edge_PlayPause.exe"
+        "C:\ProgramData\chocolatey\bin\Ahk2Exe.exe" /in "Browsers/Opera_PlayPause.ahk" /out "Opera_PlayPause.exe"
         
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
