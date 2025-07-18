@@ -42,3 +42,17 @@
 ```autohotkey
 TrayTip, Заголовок, Текст, 1  ; Изменить уведомление
 Sleep, 300                    ; Изменить задержку реакции
+
+## FAQ
+**Q: Скрипт не работает с моим браузером**  
+A: Убедитесь что:
+   - Браузер запущен
+   - Вкладка с медиаконтентом активна
+   - Скрипт соответствует вашему браузеру
+
+**Q: Можно ли использовать для других команд?**  
+A: Да! Замените `{Space}` на:
+   - `^{Left}` - предыдущий трек
+   - `^{Right}` - следующий трек
+   - `{Volume_Up}` - громкость+
+[![Build Status](https://github.com/wulkan-Git/Background-Play-Pause/actions/workflows/build.yml/badge.svg)](https://github.com/wulkan-Git/Background-Play-Pause/actions)
